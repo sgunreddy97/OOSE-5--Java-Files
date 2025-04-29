@@ -1,3 +1,4 @@
+import java.io.File;
 public class TaxFiling {
 
 	private String taxFilingID;
