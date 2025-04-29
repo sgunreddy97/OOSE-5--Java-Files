@@ -1,3 +1,5 @@
+import java.util.Date;
+import java.io.File;
 public class FinancialRepReport {
 
 	private String reportID;
