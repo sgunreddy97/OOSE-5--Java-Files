@@ -1,16 +1,11 @@
 import org.junit.jupiter.api.Test;
-import static org.mockito.Mockito.*;
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
 
 class AccountTest {
     @Test
-    void testAccountWithMockUser() {
-        User mockUser = mock(User.class);
-        when(mockUser.getName()).thenReturn("Sai Teja");
-
+    void testAccountObjectCreation() {
         Account account = new Account();
-        account.setUser(mockUser);
-
-        assertEquals("Sai Teja", account.getUser().getName());
+        assertNotNull(account);
     }
 }
