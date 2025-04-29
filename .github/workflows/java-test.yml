@@ -1,0 +1,23 @@
+name: Java CI with JUnit
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up JDK
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'temurin'
+        java-version: '17'
+
+    - name: Compile code
+      run: javac -cp ".:lib/*" -d bin *.java test/*.java
+
+    - name: Run tests
+      run: java -jar lib/junit-platform-console-standalone-1.9.2.jar --class-path bin --scan-classpath
